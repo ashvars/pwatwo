@@ -1,0 +1,16 @@
+#result-set {
+    margin: 0;
+    box-shadow: 1px 1px 3px 1px #ddd;
+    background: #fff;
+    padding: 10px;
+
+    & > div {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-weight: bold;
+        }
+    }
+}

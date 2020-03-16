@@ -1,0 +1,11 @@
+<app-header [currentPage]='"scanner"'></app-header>
+<div id="page-container" class='container-fluid'>
+  <h3 class='m-b-30'>E-Invoice Scanner (Using QR Code)</h3>
+  <div class="row ">
+    <div class="col-12">
+        <zxing-scanner
+          (scanSuccess)="scanSuccessHandler($event)"
+          (scanComplete)="scanCompleteHandler($event)"
+          [formats]="['QR_CODE', 'EAN_13', 'CODE_128', 'DATA_MATRIX']"></zxing-scanner>
+    </div>
+</div>

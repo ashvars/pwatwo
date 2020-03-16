@@ -1,0 +1,76 @@
+<app-header [currentPage]='"returns"'></app-header>
+<div id="page-container" class='container-fluid'>
+  <h3>Returns</h3>
+  <div class="row text-stretch">
+    <div class="col-4 col-lg-2">
+      <div class="select-field">
+        <select name="" id="">
+          <option value="Demo Entity">Demo Entity</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-4 col-lg-2">
+      <div class="select-field">
+        <select name="" id="">
+          <option value="GSTR-1">GSTR-1</option>
+          <option value="GSTR-1">GSTR-3B</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-4 col-lg-2">
+      <div class="input-field">
+        <input type="text" class="form-control" value='01/2020'>
+      </div>
+    </div>
+  </div>
+  <div class="row color-figures m-b-30">
+    <div class="col-12 col-lg-3">
+      <div class="color-figure">
+          <span class='figure-text'>Total GSTINs</span>
+          <span class="figure-value">110</span>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3">
+      <div class="color-figure">
+          <span class='figure-text'>Saved</span>
+          <span class="figure-value">80</span>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3">
+      <div class="color-figure">
+          <span class='figure-text'>Not Initiated</span>
+          <span class="figure-value">15</span>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3">
+      <div class="color-figure">
+          <span class='figure-text'>Failed</span>
+          <span class="figure-value">15</span>
+      </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="compliance-figures">
+      <div class="">
+        <h5>Save Returns</h5>
+      </div>
+        <table mdbTable class='table'>
+          <thead class="">
+            <tr>
+              <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let el of elements" [ngClass]='{"escalation": el.esc}'>
+              <td>{{el.gstin}}</td>
+              <td [ngClass]='{"color":el.status === "Success" ? "#379541":"#f04c3e"}'>{{el.status}}</td>
+              <td>{{el.ts}}</td>
+              <td><a class='hyperlink'>Save</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
